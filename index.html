@@ -188,7 +188,7 @@
 
         document.getElementById('total').firstChild.nodeValue = parseInt(document.getElementById('sum1').textContent) + parseInt(document.getElementById('sum0.75').textContent) + parseInt(document.getElementById('sum0.5').textContent) + parseInt(document.getElementById('sum0.25').textContent) + parseInt(document.getElementById('sum0').textContent)
 
-        const asupanMakanan = parseInt(document.getElementById('total').textContent) / 16 * 100
+        const asupanMakanan = parseInt(document.getElementById('total').textContent) / 16 * 100 > 100 ? 100 : parseInt(document.getElementById('total').textContent) / 16 * 100
 
         document.getElementById('asupan-makanan').innerHTML = `Asupan makanan pasien adalah ${asupanMakanan}%`
 
