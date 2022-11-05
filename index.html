@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="script.js"></script>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <div class="container">
+        <!-- <iframe width="1280px" height="720px" src="https://www.artsteps.com/embed/6081f5968338c16b117a6d7f/1280/720" frameborder="0" allowfullscreen></iframe> -->
+    </div>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Form Sisa Makanan Pasien</h1>
+    <div style="margin-top: 10px;">
+        <h2>Sisa porsi makanan</h2>
+        <form action="">
+            <table>
+                <tr>
+                    <th>Jenis Menu</th>
+                    <th>1</th>
+                    <th>3/4</th>
+                    <th>1/2</th>
+                    <th>1/4</th>
+                    <th>0</th>
+                </tr>
+                <tr>
+                    <td>Karbohidrat</td>
+                    <td><input type="radio" name="kh" value="1.0" checked onclick="hitung()"></td>
+                    <td><input type="radio" name="kh" value="0.75" onclick="hitung()"></td>
+                    <td><input type="radio" name="kh" value="0.5" onclick="hitung()"></td>
+                    <td><input type="radio" name="kh" value="0.25" onclick="hitung()"></td>
+                    <td><input type="radio" name="kh" value="0.0" onclick="hitung()"></td>
+                </tr>
+                <tr>
+                    <td>Lauk Hewani</td>
+                    <td><input type="radio" name="lh" value="1.0" checked onclick="hitung()"></td>
+                    <td><input type="radio" name="lh" value="0.75" onclick="hitung()"></td>
+                    <td><input type="radio" name="lh" value="0.5" onclick="hitung()"></td>
+                    <td><input type="radio" name="lh" value="0.25" onclick="hitung()"></td>
+                    <td><input type="radio" name="lh" value="0.0" onclick="hitung()"></td>
+                </tr>
+                <tr>
+                    <td>Lauk Nabati</td>
+                    <td><input type="radio" name="ln" value="1.0" checked onclick="hitung()"></td>
+                    <td><input type="radio" name="ln" value="0.75" onclick="hitung()"></td>
+                    <td><input type="radio" name="ln" value="0.5" onclick="hitung()"></td>
+                    <td><input type="radio" name="ln" value="0.25" onclick="hitung()"></td>
+                    <td><input type="radio" name="ln" value="0.0" onclick="hitung()"></td>
+                </tr>
+                <tr>
+                    <td>Sayuran</td>
+                    <td><input type="radio" name="sn" value="1.0" checked onclick="hitung()"></td>
+                    <td><input type="radio" name="sn" value="0.75" onclick="hitung()"></td>
+                    <td><input type="radio" name="sn" value="0.5" onclick="hitung()"></td>
+                    <td><input type="radio" name="sn" value="0.25" onclick="hitung()"></td>
+                    <td><input type="radio" name="sn" value="0.0" onclick="hitung()"></td>
+                </tr>
+                <tr>
+                    <td>Buah</td>
+                    <td><input type="radio" name="bh" value="1.0" checked onclick="hitung()"></td>
+                    <td><input type="radio" name="bh" value="0.75" onclick="hitung()"></td>
+                    <td><input type="radio" name="bh" value="0.5" onclick="hitung()"></td>
+                    <td><input type="radio" name="bh" value="0.25" onclick="hitung()"></td>
+                    <td><input type="radio" name="bh" value="0.0" onclick="hitung()"></td>
+                </tr>
+                <tr>
+                    <td>Extra</td>
+                    <td><input type="radio" name="ea" value="1.0" checked onclick="hitung()"></td>
+                    <td><input type="radio" name="ea" value="0.75" onclick="hitung()"></td>
+                    <td><input type="radio" name="ea" value="0.5" onclick="hitung()"></td>
+                    <td><input type="radio" name="ea" value="0.25" onclick="hitung()"></td>
+                    <td><input type="radio" name="ea" value="0.0" onclick="hitung()"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <div style="margin-top: 10px;">
+        <div style="display: flex;">
+            <h2>Perhitungan</h2>
+        </div>
+        <table>
+            <tr>
+                <th>Sisa Porsi</th>
+                <th>Jumlah</th>
+                <th>Dikali</th>
+                <th>Hasil</th>
+            </tr>
+            <tr>
+                <td>1 porsi</td>
+                <td id="cot1">0</td>
+                <td id="mul1">0</td>
+                <td id="sum1">0</td>
+            </tr>
+            <tr>
+                <td>3/4 porsi</td>
+                <td id="cot0.75">0</td>
+                <td id="mul0.75">1</td>
+                <td id="sum0.75">0</td>
+            </tr>
+            <tr>
+                <td>1/2 porsi</td>
+                <td id="cot0.5">0</td>
+                <td id="mul0.5">2</td>
+                <td id="sum0.5">0</td>
+            </tr>
+            <tr>
+                <td>1/4 porsi</td>
+                <td id="cot0.25">0</td>
+                <td id="mul0.25">3</td>
+                <td id="sum0.25">0</td>
+            </tr>
+            <tr>
+                <td>0 porsi</td>
+                <td id="cot0">0</td>
+                <td id="mul0">4</td>
+                <td id="sum0">0</td>
+            </tr>
+            <tr>
+                <td><b>Total</b></td>
+                <td></td>
+                <td></td>
+                <td id="total">0</td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="margin-top: 10px;">
+        <h2 id="asupan-makanan"></h2>
+    </div>
+
+    <div style="margin-top: 10px;">
+        <h2 id="sisa-makanan"></h2>
+    </div>
+
+    <div style="margin-top: 10px;">
+        <h2 id="kategori"></h2>
+    </div>
+</body>
+
+<script>
+    function hitung() {
+        const karbohidrat = parseFloat(document.querySelector('input[name="kh"]:checked').value);
+        const laukHewani = parseFloat(document.querySelector('input[name="lh"]:checked').value);
+        const laukNabati = parseFloat(document.querySelector('input[name="ln"]:checked').value);
+        const sayuran = parseFloat(document.querySelector('input[name="sn"]:checked').value);
+        const buah = parseFloat(document.querySelector('input[name="bh"]:checked').value);
+        const extra = parseFloat(document.querySelector('input[name="ea"]:checked').value);
+
+        const countPortion = [karbohidrat, laukHewani, laukNabati, sayuran, buah, extra]
+        const count = {};
+        countPortion.forEach(element => {
+            count[element] = (count[element] || 0) + 1;
+        });
+
+        document.getElementById('cot1').firstChild.nodeValue = count['1'] || 0
+        document.getElementById('cot0.75').firstChild.nodeValue = count['0.75'] || 0
+        document.getElementById('cot0.5').firstChild.nodeValue = count['0.5'] || 0
+        document.getElementById('cot0.25').firstChild.nodeValue = count['0.25'] || 0
+        document.getElementById('cot0').firstChild.nodeValue = count['0'] || 0
+
+        document.getElementById('sum1').firstChild.nodeValue = parseInt(document.getElementById('cot1').textContent) * 0
+        document.getElementById('sum0.75').firstChild.nodeValue = parseInt(document.getElementById('cot0.75').textContent) * 1
+        document.getElementById('sum0.5').firstChild.nodeValue = parseInt(document.getElementById('cot0.5').textContent) * 2
+        document.getElementById('sum0.25').firstChild.nodeValue = parseInt(document.getElementById('cot0.25').textContent) * 3
+        document.getElementById('sum0').firstChild.nodeValue = parseInt(document.getElementById('cot0').textContent) * 4
+
+        document.getElementById('total').firstChild.nodeValue = parseInt(document.getElementById('sum1').textContent) + parseInt(document.getElementById('sum0.75').textContent) + parseInt(document.getElementById('sum0.5').textContent) + parseInt(document.getElementById('sum0.25').textContent) + parseInt(document.getElementById('sum0').textContent)
+
+        const asupanMakanan = parseInt(document.getElementById('total').textContent) / 16 * 100
+
+        document.getElementById('asupan-makanan').innerHTML = `Asupan makanan pasien adalah ${asupanMakanan}%`
+
+        document.getElementById('sisa-makanan').innerHTML = `Sisa makanan pasien adalah ${100 - asupanMakanan}%`
+
+        document.getElementById('kategori').innerHTML = `Kategori: ${100 - asupanMakanan <= 20 ? 'Gizi pasien <span style="color: green;">terpenuhi</span>' : 'Gizi pasien <span style="color: red;">tidak terpenuhi</span>'}`
+    }
+
+    hitung()
+</script>
+
+</html>
